@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контрольная работа - Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            Контрольная работа
+            <button class="theme-toggle" id="themeToggle">
+                🌙 Тёмная тема
+            </button>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="main">
+            <article class="profile">
+                <h1 class="profile__title">Информация об авторе</h1>
+                <img class="profile__photo" src="me.jpg" alt="Фото автора">
+                <h2 class="profile__name">Кимов Павел Арсаланович</h2>
+                <p class="profile__group">ЭФБО-13-24</p>
+            </article>
+            
+            <section class="about">
+                <h2 class="about__title">Обо мне</h2>
+                <p class="about__text">Обо мне: Родился на Ямайке в 1975 году до нашей эры</p>
+            </section>
+            
+            <section class="skills">
+                <h2 class="skills__title">Мои навыки</h2>
+                <div class="skills__grid">
+                    <div class="skill skill--stress">стрессоустойчивый</div>
+                    <div class="skill skill--punctual">Пунктуальный</div>
+                    <div class="skill skill--errors">Знаю ошибки</div>
+                    <div class="skill skill--target">Прицельный</div>
+                </div>
+            </section>
+            
+            <section class="experience">
+                <h2 class="experience__title">Мой опыт работы</h2>
+                <div class="experience__grid">
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Главный бухгалтер представителя котят 3 года</h3>
+                        <p class="experience-card__desc"></p>
+                    </article>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">© 2025 КР</footer>
+    </div>
+
+    <script>
+        // Функция для переключения темы
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            
+            if (isDark) {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙 Тёмная тема';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Светлая тема';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Инициализация темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Светлая тема';
+            }
+            
+            themeToggle.addEventListener('click', toggleTheme);
+        });
+    </script>
+</body>
+</html>

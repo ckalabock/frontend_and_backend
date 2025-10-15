@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары - Контрольная</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            Контрольная работа
+            <button class="theme-toggle" id="themeToggle">
+                🌙 Тёмная тема
+            </button>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="main">
+            <h1 class="page-title">Товары и услуги</h1>
+            
+            <section class="products">
+                <article class="product">
+                    <h3 class="product__name">Корм для кошек Grandorf</h3>
+                    <img class="product__image" src="../gradorf.webp" alt="Корм">
+                    <span class="product__price">2100 руб.</span>
+                    <button class="product__cart-btn" onclick="toggleCart(this)">
+                        В корзину
+                    </button>
+                </article>
+                
+                <article class="product">
+                    <h3 class="product__name">Шлейка для кота</h3>
+                    <img class="product__image" src="../harness.webp" alt="Шлейка">
+                    <span class="product__price">1500 руб.</span>
+                    <button class="product__cart-btn" onclick="toggleCart(this)">
+                        В корзину
+                    </button>
+                </article>
+                
+                <article class="product">
+                    <h3 class="product__name">Лоток для кота</h3>
+                    <img class="product__image" src="../tray.webp" alt="Лоток">
+                    <span class="product__price">5000 руб.</span>
+                    <button class="product__cart-btn" onclick="toggleCart(this)">
+                        В корзину
+                    </button>
+                </article>
+            </section>
+        </main>
+        
+        <footer class="footer">© 2025 КР</footer>
+    </div>
+
+    <script>
+        // Функция для переключения темы
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            
+            if (isDark) {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙 Тёмная тема';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Светлая тема';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Функция для переключения кнопки корзины
+        function toggleCart(button) {
+            if (button.textContent === 'В корзину') {
+                button.textContent = 'В корзине';
+                button.classList.add('product__cart-btn--active');
+            } else {
+                button.textContent = 'В корзину';
+                button.classList.remove('product__cart-btn--active');
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация темы
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Светлая тема';
+            }
+            
+            themeToggle.addEventListener('click', toggleTheme);
+        });
+    </script>
+</body>
+</html>

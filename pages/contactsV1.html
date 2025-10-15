@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Контрольная</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            Контрольная работа
+            <button class="theme-toggle" id="themeToggle">
+                🌙 Тёмная тема
+            </button>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="main">
+            <h1 class="page-title">Контакты</h1>
+            
+            <section class="contact-info">
+                <h2 class="contact-info__title">Контактная информация</h2>
+                <p><strong>Email:</strong> pravdapochta@mail.ru</p>
+                <p><strong>Телефон:</strong> +7 (844) 445-37-75</p>
+                <p><strong>Адрес:</strong> г. Холмск, ул. Советская, д. 2</p>
+                
+                <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
+            </section>
+        </main>
+        
+        <footer class="footer">© 2025 КР</footer>
+    </div>
+
+    <!-- Модальное окно для формы обратной связи -->
+    <dialog id="contactModal">
+        <div class="modal-header">
+            <h2 class="modal-header__title">Форма обратной связи</h2>
+        </div>
+
+        <div class="modal-content">
+            <form id="feedbackForm" method="dialog">
+                <div class="form-group">
+                    <label class="form-group__label" for="name">
+                        Имя <span class="required">*</span>
+                    </label>
+                    <input class="form-group__input" type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label class="form-group__label" for="phone">
+                        Телефон <span class="required">*</span>
+                    </label>
+                    <input class="form-group__input" type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                </div>
+                <div class="form-group">
+                    <label class="form-group__label" for="email">
+                        Электронная почта <span class="required">*</span>
+                    </label>
+                    <input class="form-group__input" type="email" id="email" name="email" required placeholder="example@mail.ru">
+                </div>
+                <div class="form-group">
+                    <label class="form-group__label" for="category">
+                        Категория обращения <span class="required">*</span>
+                    </label>
+                    <select class="form-group__select" id="category" name="category" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="technical">Техническая поддержка</option>
+                        <option value="commercial">Коммерческое предложение</option>
+                        <option value="cooperation">Сотрудничество</option>
+                        <option value="complaint">Жалоба</option>
+                        <option value="suggestion">Предложение</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-group__label" for="message">
+                        Текст обращения <span class="required">*</span>
+                    </label>
+                    <textarea class="form-group__textarea" id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn--secondary">Отмена</button>
+                    <button type="button" class="btn btn--primary" onclick="submitForm()">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        // Функция для переключения темы
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            
+            if (isDark) {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙 Тёмная тема';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Светлая тема';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Функция для отправки формы
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            const formData = new FormData(form);
+
+            // Простая валидация
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Собираем данные формы
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                message: formData.get('message')
+            };
+
+            // В реальном приложении здесь был бы AJAX-запрос
+            console.log('Данные формы:', data);
+
+            // Показываем уведомление об успешной отправке
+            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+
+            // Закрываем модальное окно
+            contactModal.close();
+
+            // Очищаем форму
+            form.reset();
+        }
+
+        // Закрытие модального окна по клику на фон
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                this.close();
+            }
+        });
+
+        // Обработка отправки формы через Enter (предотвращаем стандартное поведение)
+        document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                event.preventDefault();
+            }
+        });
+
+        // Инициализация темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Светлая тема';
+            }
+            
+            themeToggle.addEventListener('click', toggleTheme);
+        });
+    </script>
+</body>
+</html>
