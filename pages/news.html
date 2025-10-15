@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости - Контрольная</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styleV1.css">
 </head>
 <body>
     <div class="page">
-        <header class="header">Контрольная работа</header>
+        <header class="header">
+            Контрольная работа
+            <button class="theme-toggle" id="themeToggle">
+                🌙 Тёмная тема
+            </button>
+        </header>
         
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a class="nav__link" href="../index.html">Главная</a>
+                    <a class="nav__link" href="../indexV1.html">Главная</a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link nav__link--active" href="news.html">Новости</a>
+                    <a class="nav__link nav__link--active" href="newsV1.html">Новости</a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link" href="goods.html">Товары</a>
+                    <a class="nav__link" href="goodsV1.html">Товары</a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link" href="contacts.html">Контакты</a>
+                    <a class="nav__link" href="contactsV1.html">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -55,5 +60,35 @@
         
         <footer class="footer">© 2025 КР</footer>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            
+            if (isDark) {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙 Тёмная тема';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Светлая тема';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Светлая тема';
+            }
+            
+            themeToggle.addEventListener('click', toggleTheme);
+        });
+    </script>
 </body>
 </html>
