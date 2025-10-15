@@ -3,212 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товары - Контрольная работа</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Товары - Контрольная</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .product__cart-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .product__cart-btn:hover {
+            background: #2980b9;
+        }
+
+        .product__cart-btn--active {
+            background: #27ae60;
+        }
+
+        .product__cart-btn--active:hover {
+            background: #219652;
+        }
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container-fluid p-0">
-        <!-- Header -->
-        <header class="bg-primary text-white py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <h1 class="h3 mb-1">Контрольная работа</h1>
-                        <p class="mb-0 opacity-75">Товары и услуги</p>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">
-                                <i class="bi bi-house me-1"></i>Главная
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="news.html">
-                                <i class="bi bi-newspaper me-1"></i>Новости
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="goods.html">
-                                <i class="bi bi-cart me-1"></i>Товары
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacts.html">
-                                <i class="bi bi-telephone me-1"></i>Контакты
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<body>
+    <div class="page">
+        <header class="header">Контрольная работа</header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
         </nav>
-
-        <!-- Main Content -->
-        <main class="container my-4">
-            <!-- Products Section -->
-            <section class="mb-5">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h2 class="card-title h4 mb-0">
-                            <i class="bi bi-grid-3x3-gap text-primary me-2"></i>
-                            Товары для животных
-                        </h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="row g-4">
-                            <!-- Product 1 -->
-                            <div class="col-md-4">
-                                <div class="card h-100 shadow-sm">
-                                    <img src="../gradorf.webp" class="card-img-top" alt="Корм для кошек Grandorf" style="height: 200px; object-fit: cover;">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Корм для кошек Grandorf</h5>
-                                        <p class="card-text flex-grow-1">
-                                            Высококачественный корм для кошек премиум класса. Содержит все необходимые витамины и минералы.
-                                        </p>
-                                        <div class="mt-auto">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="h5 text-success mb-0">2100 руб.</span>
-                                                <button class="btn btn-primary">
-                                                    <i class="bi bi-cart-plus me-1"></i>В корзину
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Product 2 -->
-                            <div class="col-md-4">
-                                <div class="card h-100 shadow-sm">
-                                    <img src="../harness.webp" class="card-img-top" alt="Шлейка для кота" style="height: 200px; object-fit: cover;">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Шлейка для кота</h5>
-                                        <p class="card-text flex-grow-1">
-                                            Удобная и безопасная шлейка для прогулок с котом. Регулируемые ремни, мягкая подкладка.
-                                        </p>
-                                        <div class="mt-auto">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="h5 text-success mb-0">1500 руб.</span>
-                                                <button class="btn btn-primary">
-                                                    <i class="bi bi-cart-plus me-1"></i>В корзину
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Product 3 -->
-                            <div class="col-md-4">
-                                <div class="card h-100 shadow-sm">
-                                    <img src="../tray.webp" class="card-img-top" alt="Лоток для кота" style="height: 200px; object-fit: cover;">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Лоток для кота</h5>
-                                        <p class="card-text flex-grow-1">
-                                            Просторный лоток с высокими бортами. Легко чистится, устойчивая конструкция.
-                                        </p>
-                                        <div class="mt-auto">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="h5 text-success mb-0">5000 руб.</span>
-                                                <button class="btn btn-primary">
-                                                    <i class="bi bi-cart-plus me-1"></i>В корзину
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Additional Products -->
-            <section class="mb-5">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h3 class="card-title h5 mb-0">
-                            <i class="bi bi-star text-warning me-2"></i>
-                            Популярные товары
-                        </h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Товар</th>
-                                        <th>Описание</th>
-                                        <th>Цена</th>
-                                        <th>Действия</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Корм Grandorf</td>
-                                        <td>Премиум корм для кошек</td>
-                                        <td class="text-success">2100 руб.</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary">
-                                                <i class="bi bi-eye me-1"></i>Просмотр
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Шлейка</td>
-                                        <td>Прогулочная шлейка</td>
-                                        <td class="text-success">1500 руб.</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary">
-                                                <i class="bi bi-eye me-1"></i>Просмотр
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Лоток</td>
-                                        <td>Туалет для кота</td>
-                                        <td class="text-success">5000 руб.</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary">
-                                                <i class="bi bi-eye me-1"></i>Просмотр
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+        
+        <main class="main">
+            <h1 class="page-title">Товары и услуги</h1>
+            
+            <section class="products">
+                <article class="product">
+                    <h3 class="product__name">Корм для кошек Grandorf</h3>
+                    <img class="product__image" src="../gradorf.webp" alt="Корм">
+                    <span class="product__price">2100 руб.</span>
+                    <button class="product__cart-btn" onclick="toggleCart(this)">
+                        В корзину
+                    </button>
+                </article>
+                
+                <article class="product">
+                    <h3 class="product__name">Шлейка для кота</h3>
+                    <img class="product__image" src="../harness.webp" alt="Шлейка">
+                    <span class="product__price">1500 руб.</span>
+                    <button class="product__cart-btn" onclick="toggleCart(this)">
+                        В корзину
+                    </button>
+                </article>
+                
+                <article class="product">
+                    <h3 class="product__name">Лоток для кота</h3>
+                    <img class="product__image" src="../tray.webp" alt="Лоток">
+                    <span class="product__price">5000 руб.</span>
+                    <button class="product__cart-btn" onclick="toggleCart(this)">
+                        В корзину
+                    </button>
+                </article>
             </section>
         </main>
-
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-4 mt-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Контрольная работа. Все права защищены.</p>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
-                        <a href="#" class="text-white text-decoration-none">Доставка и оплата</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        
+        <footer class="footer">© 2025 КР</footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleCart(button) {
+            if (button.textContent === 'В корзину') {
+                button.textContent = 'В корзине';
+                button.classList.add('product__cart-btn--active');
+            } else {
+                button.textContent = 'В корзину';
+                button.classList.remove('product__cart-btn--active');
+            }
+        }
+    </script>
 </body>
 </html>
