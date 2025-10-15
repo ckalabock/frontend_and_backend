@@ -7,23 +7,31 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="page-container">
+    <div class="page">
         <header class="header">Контрольная работа</header>
         
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link active" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
         
-        <main class="content">
+        <main class="main">
             <h1 class="page-title">Контакты</h1>
             
             <section class="contact-info">
-                <h2>Контактная информация</h2>
+                <h2 class="contact-info__title">Контактная информация</h2>
                 <p><strong>Email:</strong> pravdapochta@mail.ru</p>
                 <p><strong>Телефон:</strong> +7 (844) 445-37-75</p>
                 <p><strong>Адрес:</strong> г. Холмск, ул. Советская, д. 2</p>
@@ -38,26 +46,34 @@
     <!-- Модальное окно для формы обратной связи -->
     <dialog id="contactModal">
         <div class="modal-header">
-            <h2>Форма обратной связи</h2>
+            <h2 class="modal-header__title">Форма обратной связи</h2>
         </div>
 
         <div class="modal-content">
             <form id="feedbackForm" method="dialog">
                 <div class="form-group">
-                    <label for="name">Имя <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                    <label class="form-group__label" for="name">
+                        Имя <span class="required">*</span>
+                    </label>
+                    <input class="form-group__input" type="text" id="name" name="name" required placeholder="Введите ваше имя">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Телефон <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                    <label class="form-group__label" for="phone">
+                        Телефон <span class="required">*</span>
+                    </label>
+                    <input class="form-group__input" type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
                 </div>
                 <div class="form-group">
-                    <label for="email">Электронная почта <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                    <label class="form-group__label" for="email">
+                        Электронная почта <span class="required">*</span>
+                    </label>
+                    <input class="form-group__input" type="email" id="email" name="email" required placeholder="example@mail.ru">
                 </div>
                 <div class="form-group">
-                    <label for="category">Категория обращения <span class="required">*</span></label>
-                    <select id="category" name="category" required>
+                    <label class="form-group__label" for="category">
+                        Категория обращения <span class="required">*</span>
+                    </label>
+                    <select class="form-group__select" id="category" name="category" required>
                         <option value="">Выберите категорию</option>
                         <option value="technical">Техническая поддержка</option>
                         <option value="commercial">Коммерческое предложение</option>
@@ -68,15 +84,15 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message">Текст обращения <span class="required">*</span></label>
-                    <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                    <label class="form-group__label" for="message">
+                        Текст обращения <span class="required">*</span>
+                    </label>
+                    <textarea class="form-group__textarea" id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
                 </div>
 
                 <div class="modal-actions">
-                    <!-- Изменено: type="button" для предотвращения валидации формы -->
-                    <button type="button" class="btn btn-secondary" onclick="contactModal.close()">Отмена</button>
-                    <!-- Кнопка отправки с обработкой через JavaScript -->
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                    <button type="submit" class="btn btn--secondary">Отмена</button>
+                    <button type="button" class="btn btn--primary" onclick="submitForm()">Отправить</button>
                 </div>
             </form>
         </div>
