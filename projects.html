@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты - Портфолио разработчика</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>Кимов Павел</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="../index.html">Главная</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link nav__link--active" href="projects.html">Проекты</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="diary.html">Дневник</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
+            <h1 class="page-title">Мои проекты</h1>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="html">HTML</button>
+                <button class="filter-btn" data-filter="js">JavaScript</button>
+                <button class="filter-btn" data-filter="react">React</button>
+            </div>
+
+            <div class="projects-container">
+                <div class="project-item" data-category="html">
+                    <div class="project-card-large">
+                        <div class="project-image">
+                            <img src="../images/project1.jpg" alt="Личный сайт">
+                        </div>
+                        <div class="project-content">
+                            <h3>Личный сайт</h3>
+                            <p>Полностью адаптивный личный сайт-портфолио с современным дизайном.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn--small">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Демо
+                                </a>
+                                <a href="#" class="btn btn--small btn--outline">
+                                    <i class="fab fa-github"></i>
+                                    Код
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="js">
+                    <div class="project-card-large">
+                        <div class="project-image">
+                            <img src="../images/project2.jpg" alt="Todo-приложение">
+                        </div>
+                        <div class="project-content">
+                            <h3>Todo-приложение</h3>
+                            <p>Интерактивное приложение для управления задачами с использованием LocalStorage.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">LocalStorage</span>
+                                <span class="tag">CRUD</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn--small">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Демо
+                                </a>
+                                <a href="#" class="btn btn--small btn--outline">
+                                    <i class="fab fa-github"></i>
+                                    Код
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="html">
+                    <div class="project-card-large">
+                        <div class="project-image">
+                            <img src="../images/project3.jpg" alt="Портфолио">
+                        </div>
+                        <div class="project-content">
+                            <h3>Портфолио Bootstrap</h3>
+                            <p>Современное портфолио с использованием Bootstrap 5 и кастомных стилей.</p>
+                            <div class="project-tags">
+                                <span class="tag">Bootstrap</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn--small">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Демо
+                                </a>
+                                <a href="#" class="btn btn--small btn--outline">
+                                    <i class="fab fa-github"></i>
+                                    Код
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="react">
+                    <div class="project-card-large">
+                        <div class="project-image">
+                            <img src="../images/project4.jpg" alt="Интернет-магазин">
+                        </div>
+                        <div class="project-content">
+                            <h3>Интернет-магазин</h3>
+                            <p>Полнофункциональный интернет-магазин на React с корзиной покупок.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Redux</span>
+                                <span class="tag">API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn--small">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Демо
+                                </a>
+                                <a href="#" class="btn btn--small btn--outline">
+                                    <i class="fab fa-github"></i>
+                                    Код
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="footer__content">
+                <p>&copy; 2025 Кимов Павел. Все права защищены.</p>
+                <div class="footer-links">
+                    <a href="contacts.html">Контакты</a>
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Фильтрация проектов
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Удаляем активный класс у всех кнопок
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    projectItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

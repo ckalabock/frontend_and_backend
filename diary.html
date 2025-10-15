@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный дневник - Портфолио разработчика</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>Кимов Павел</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="../index.html">Главная</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="projects.html">Проекты</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link nav__link--active" href="diary.html">Дневник</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
+            <h1 class="page-title">Мой учебный прогресс</h1>
+            
+            <div class="diary-layout">
+                <div class="diary-entries">
+                    <h2 class="section-title">Последние записи</h2>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">15 декабря 2025</div>
+                            <div class="timeline-content">
+                                <h3>Верстка макета сайта</h3>
+                                <p>Завершил верстку адаптивного макета личного сайта. Использовал Flexbox и Grid для создания современного дизайна.</p>
+                                <span class="status-badge completed">
+                                    <i class="fas fa-check"></i>
+                                    Завершено
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">10 декабря 2025</div>
+                            <div class="timeline-content">
+                                <h3>JavaScript основы</h3>
+                                <p>Изучил основы JavaScript: переменные, функции, DOM manipulation. Создал несколько интерактивных элементов.</p>
+                                <span class="status-badge completed">
+                                    <i class="fas fa-check"></i>
+                                    Завершено
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item in-progress">
+                            <div class="timeline-date">5 декабря 2025</div>
+                            <div class="timeline-content">
+                                <h3>Работа с формами</h3>
+                                <p>Изучаю валидацию форм, обработку событий и отправку данных на сервер. Практикуюсь на реальных примерах.</p>
+                                <span class="status-badge in-progress">
+                                    <i class="fas fa-spinner"></i>
+                                    В процессе
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item in-progress">
+                            <div class="timeline-date">1 декабря 2025</div>
+                            <div class="timeline-content">
+                                <h3>Адаптивный дизайн</h3>
+                                <p>Осваиваю медиа-запросы и mobile-first подход. Создаю responsive layouts для разных устройств.</p>
+                                <span class="status-badge in-progress">
+                                    <i class="fas fa-spinner"></i>
+                                    В процессе
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn--primary" id="addEntryBtn">
+                        <i class="fas fa-plus"></i>
+                        Добавить запись
+                    </button>
+                </div>
+                
+                <div class="current-courses">
+                    <h2 class="section-title">Текущие курсы</h2>
+                    
+                    <div class="course-card">
+                        <h3>Веб-разработка</h3>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                            <span class="progress-text">90%</span>
+                        </div>
+                        <p>Основы HTML, CSS, JavaScript и современных фреймворков</p>
+                    </div>
+                    
+                    <div class="course-card">
+                        <h3>JavaScript</h3>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%"></div>
+                            </div>
+                            <span class="progress-text">70%</span>
+                        </div>
+                        <p>Продвинутый JavaScript, асинхронное программирование, ES6+</p>
+                    </div>
+                    
+                    <div class="course-card">
+                        <h3>React</h3>
+                        <div class="course-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                            <span class="progress-text">50%</span>
+                        </div>
+                        <p>Компонентный подход, хуки, управление состоянием</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="footer__content">
+                <p>&copy; 2025 Кимов Павел. Все права защищены.</p>
+                <div class="footer-links">
+                    <a href="contacts.html">Контакты</a>
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('addEntryBtn').addEventListener('click', function() {
+            alert('Функция добавления новой записи будет реализована в будущем!');
+        });
+    </script>
+</body>
+</html>
